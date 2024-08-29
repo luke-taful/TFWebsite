@@ -1,0 +1,126 @@
+body{
+    background-color: #1c53a8;
+    margin: 0%;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    perspective: 2000px;
+    justify-content: center;
+}
+
+#sheet{
+    z-index: 2;
+    height: 100vh;
+    width: 110%;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    position: absolute;
+    transform: translateY(-40rem) translateX(4rem) rotateX(45deg) rotateY(-5deg) rotateZ(20deg) scale(0.25);
+}
+#sheet:after {
+    z-index: 3;
+    background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
+  }
+
+.container{
+    border: 4px ridge #5ba6ff;
+    width: min-content;
+    height: min-content;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.panel{
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgb(156 229 251 / 75%);
+    transition: background-color 1500ms;
+}
+
+.panel:hover{
+    background-color: aqua;
+    transition-duration: 0ms;
+}
+
+
+#content{
+    transform: translateX(-0.75rem) translateY(-1.75rem) rotateX(45deg) rotateY(-5deg) rotateZ(20deg) scale(1);
+    z-index: 1;
+    height: 70rem;
+    width: 110rem;
+
+    font-size: xx-large;
+    /* font-family: "Carrois Gothic SC", sans-serif; */
+    font-family: "Graduate", serif;
+    font-style: oblique;
+    color: #5ba6ff;
+    font-size: 4.5rem;
+    font
+    margin: 0px;
+
+    /* background-color: aliceblue; */
+}
+
+h1{
+    margin: 0px;
+    
+}
+
+
+
+/* animation: BGAnimation 50s linear infinite; */
+
+
+@keyframes BGAnimation {
+    0%{background-position:100% 50%}
+    100%{background-position:-33% 50%}
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(3px)
+    }
+    100% {
+        transform: translateX(-550px);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(-3px)
+    }
+    100% {
+        transform: translateX(+550px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes setTitle{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(+550px);
+    }
+}
