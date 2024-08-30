@@ -9,6 +9,8 @@ body{
     overflow: hidden; 
     perspective: 2000px;
     justify-content: center;
+    cursor: crosshair;
+    cursor:;
 }
 
 #sheet{
@@ -45,35 +47,50 @@ body{
 }
 
 .panel:hover{
-    background-color: aqua;
+    background-color: #5ba5ff5f;
     transition-duration: 0ms;
 }
 
 
 #content{
+    display: flexbox;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: flex-start;
     transform: translateX(-0.75rem) translateY(-1.75rem) rotateX(45deg) rotateY(-5deg) rotateZ(20deg) scale(1);
-    z-index: 1;
+    z-index: 5;
     height: 70rem;
-    width: 110rem;
-
+    width: 100rem;
     font-size: xx-large;
-    /* font-family: "Carrois Gothic SC", sans-serif; */
     font-family: "Graduate", serif;
     font-style: oblique;
     color: #5ba6ff;
     font-size: 4.5rem;
-    font
     margin: 0px;
-
-    /* background-color: aliceblue; */
+    overflow:scroll;
 }
 
-h1{
-    margin: 0px;
-    
+#content::-webkit-scrollbar{
+    /* background: none; */
+    width: 10px;
+    height: 10px;
+}
+#content::-webkit-scrollbar-thumb{
+    background: #5ba5ff5f;
+    border-radius: 10px;
+    height: 1rem;
+    width: 2px;
 }
 
-
+#name{
+    position: sticky;
+    top: 0;
+    margin: 0;
+}
+p{
+    position: sticky;
+    top: 150px;
+}
 
 /* animation: BGAnimation 50s linear infinite; */
 
@@ -81,30 +98,6 @@ h1{
 @keyframes BGAnimation {
     0%{background-position:100% 50%}
     100%{background-position:-33% 50%}
-}
-
-@keyframes slideLeft {
-    0% {
-        transform: translateX(0);
-    }
-    10%{
-        transform: translateX(3px)
-    }
-    100% {
-        transform: translateX(-550px);
-    }
-}
-
-@keyframes slideRight {
-    0% {
-        transform: translateX(0);
-    }
-    10%{
-        transform: translateX(-3px)
-    }
-    100% {
-        transform: translateX(+550px);
-    }
 }
 
 @keyframes fadeIn {
@@ -118,9 +111,10 @@ h1{
 
 @keyframes setTitle{
     0%{
-        transform: translateX(0px);
+        transform: translateX(0rem) translateY(0rem) rotateX(-45deg) rotateY(5deg) rotateZ(-20deg) scale(1);
+        perspective: -2000px;
     }
     100%{
-        transform: translateX(+550px);
+        transform: translateX(0px);
     }
 }
