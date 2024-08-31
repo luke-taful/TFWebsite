@@ -56,14 +56,14 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-content: flex-start;
-    transform: translateX(-0.75rem) translateY(-1.75rem) rotateX(45deg) rotateY(-5deg) rotateZ(20deg) scale(1);
+    transform: translateX(-2rem) translateY(-1.75rem) rotateX(45deg) rotateY(-5deg) rotateZ(20deg) scale(1);
     z-index: 2;
     height: 70rem;
-    width: 100rem;
+    width:fit-content;
     font-size: xx-large;
     font-family: "Graduate", serif;
     font-style: oblique;
-    color: #5ba6ff;
+    color: #dce9f9;
     font-size: 4.5rem;
     margin: 0px;
     overflow:scroll;
@@ -84,11 +84,24 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: bold;
+    font-variant: small-caps;
+    position: sticky;
+    top: 1px;
 }
 
 .icon{
     aspect-ratio: 1;
-    min-inline-size: 150px;
+    flex:0 0 35px;
+    max-height: 10vh;
+    align-self: center;
+}
+.displayImg{
+    width: 15%;
+    height: auto;
+    perspective: -2000px;
+    transform: rotateX(20deg) rotateY(5deg) rotateZ(-15deg) scale(1.25);
 }
 
 #name{
@@ -97,19 +110,30 @@ body{
     margin: 0;
     z-index: 10;
     text-wrap: nowrap;
+    font-size: 7.5vw;
 }
 #subtitle{
     position: sticky;
     top: 150px;
-    font-size: 4.5rem;
+    font-size: 4.5vw;
+    z-index: 3;
 }
+
 p{
     position: sticky;
     top: 250px;
-    /* background-color: #5ba6ff; */
     width: min-content;
     text-wrap:nowrap;
     font-size: 3rem;
+}
+
+a{
+    position: sticky;
+    width: min-content;
+    color: #dce9f9;
+    align-self: center;
+    text-decoration: none;
+    display: flex;
 }
 
 
