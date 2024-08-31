@@ -10,7 +10,6 @@ body{
     perspective: 2000px;
     justify-content: center;
     cursor: crosshair;
-    cursor:;
 }
 
 #sheet{
@@ -24,10 +23,10 @@ body{
     position: absolute;
     transform: translateY(-40rem) translateX(4rem) rotateX(45deg) rotateY(-5deg) rotateZ(20deg) scale(0.25);
 }
-#sheet:after {
+/* #sheet:after {
     z-index: 3;
     background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
-  }
+  } */
 
 .container{
     border: 4px ridge #5ba6ff;
@@ -53,12 +52,12 @@ body{
 
 
 #content{
-    display: flexbox;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-content: flex-start;
     transform: translateX(-0.75rem) translateY(-1.75rem) rotateX(45deg) rotateY(-5deg) rotateZ(20deg) scale(1);
-    z-index: 5;
+    z-index: 2;
     height: 70rem;
     width: 100rem;
     font-size: xx-large;
@@ -71,7 +70,6 @@ body{
 }
 
 #content::-webkit-scrollbar{
-    /* background: none; */
     width: 10px;
     height: 10px;
 }
@@ -82,18 +80,40 @@ body{
     width: 2px;
 }
 
+.contentSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.icon{
+    aspect-ratio: 1;
+    min-inline-size: 150px;
+}
+
 #name{
     position: sticky;
     top: 0;
     margin: 0;
+    z-index: 10;
+    text-wrap: nowrap;
+}
+#subtitle{
+    position: sticky;
+    top: 150px;
+    font-size: 4.5rem;
 }
 p{
     position: sticky;
-    top: 150px;
+    top: 250px;
+    /* background-color: #5ba6ff; */
+    width: min-content;
+    text-wrap:nowrap;
+    font-size: 3rem;
 }
 
-/* animation: BGAnimation 50s linear infinite; */
 
+/* animation: BGAnimation 50s linear infinite; */
 
 @keyframes BGAnimation {
     0%{background-position:100% 50%}
